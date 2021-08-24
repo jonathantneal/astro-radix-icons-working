@@ -1,0 +1,29 @@
+---
+const {
+	size,
+	width = size,
+	height = size,
+	title,
+	...attrs
+} = {
+	'fill': 'CurrentColor',
+	'fill-rule': 'evenodd',
+	'size': 15,
+	'viewBox': '0 0 15 15',
+	...Astro.props,
+}
+
+export interface Props {
+	'fill-rule'?: string
+	'fill'?: string
+	'height'?: number | string
+	'size'?: number | string
+	'title'?: string
+	'viewBox'?: string
+	'width'?: number | string
+}
+---
+<svg {width} {height} {...attrs}>
+	{title && <title>{title}</title>}
+	<slot />
+</svg>

@@ -1,0 +1,84 @@
+---
+import Icon from '../components/Icon.ts'
+---
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Astro with Radix Icons</title>
+</head>
+
+<body>
+	<h1>
+		Astro with Radix Icons
+	</h1>
+	<p>
+		<Icon.Width /> &nbsp; <code>&lt;Icon.Width /&gt;</code>
+	</p>
+	<p>
+		<Icon.Height /> &nbsp; <code>&lt;Icon.Height /&gt;</code>
+	</p>
+
+	<section style="display:flex">
+		<div>
+			<Icon.Download size="60" aria-hidden="true" />
+		</div>
+		<div>
+			<h3>
+				The icon is decorative
+			</h3>
+			<p>
+				As in, the icon is just sitting there looking pretty but it doesn’t matter if it entirely went away.
+				If that’s the case:
+			</p>
+			<pre><code>&lt;Icon.Download aria-hidden="true" /&gt;</code></pre>
+			<p>
+				There’s no need to announce the icon because the label next to it already does the job.
+				So, instead of reading it, we hide it from screen readers.
+				That way, the label does what it’s supposed to do without the SVG stepping on its toes.
+			</p>
+		</div>
+	</section>
+	<section style="display:flex">
+		<div>
+			<Icon.ZoomIn size="60" role="img" />
+		</div>
+		<div>
+			<h3>
+				The icon is stand-alone
+			</h3>
+			<p>
+				What we mean here is that the icon is unaccompanied by a visible text label, and is a meaningful action trigger on its own.
+				This is a tricky one.
+				It’s gotten better over time, where all you need for modern browsers is:
+				If that’s the case:
+			</p>
+			<pre><code>&lt;Icon.ZoomIn role="img" /&gt;</code></pre>
+			<p>
+				There’s no need to announce the icon because the label next to it already does the job.
+				So, instead of reading it, we hide it from screen readers.
+				That way, the label does what it’s supposed to do without the SVG stepping on its toes.
+			</p>
+		</div>
+	</section>
+	<section style="display:flex">
+		<div>
+			<a href="#"><Icon.ZoomOut size="60" aria-hidden="true" /></a>
+		</div>
+		<div>
+			<h3>
+				The icon is wrapped by a link
+			</h3>
+			<p>
+				… and the link is the meaningful action.
+				What’s important is that the link has good text.
+				If the link has visible text, then the icon is decorative.
+				If the SVG is the link where it’s wrapped in an <code>&lt;a&gt;</code> (rather than am internal-SVG link), then, give it an accessible label, like:
+			</p>
+			<pre><code>&lt;a href="/" aria-label="Good Label"&gt;&lt;Icon.ZoomOut /&gt;&lt;/a&gt;</code></pre>
+		</div>
+	</section>
+</body>
+
+</html>
